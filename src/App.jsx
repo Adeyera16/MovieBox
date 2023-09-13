@@ -4,7 +4,8 @@ import NavBar from "./components/NavBar";
 import { Routes, Route } from "react-router-dom";
 import MoviesDetails from "./components/MoviesDetails";
 import Footer from './components/Footer';
-import SearchBar from "./components/SearchBar";
+import SearchDetails from "./components/SearchDetails";
+
 
 const App = () => {
   return (
@@ -13,8 +14,8 @@ const App = () => {
       <Routes>
         <Route path="/">
           <Route index exact element={<Home />} />
-          <Route path="/searchbar" element={<SearchBar />} />
-          <Route path=":id" element={<MoviesDetails />} />
+          {/* <Route path="/searchdetails" element={<SearchDetails />} /> */}
+          <Route path="movies/:id" element={<MoviesDetails />} />
         </Route>
       </Routes>
       <Footer />

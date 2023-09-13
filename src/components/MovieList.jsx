@@ -28,16 +28,16 @@ const MovieList = () => {
     <div className="m-[3rem]">
       <div className="flex justify-between">
         <h1 className="text-3xl font-bold">Featured Movie</h1>
-        <p className="flex text-[#BE123C]">
+        <button className="flex text-[#BE123C] rounded-md p-2 hover:bg-[#BE123C] hover:text-white">
           See More{" "}
           <span className="ml-2 p-1">
-            <BsChevronRight className="mt-1" />
+            <BsChevronRight className="mt-1 cursor-pointer" />
           </span>
-        </p>
+        </button>
       </div>
       <div className="grid md:grid-cols-4 mt-[2rem] items-center justify-center">
         {topMovies.map((movie) => (
-          <Link key={movie.id} to={`${movie.id}`}>
+          <Link key={movie.id} to={`movies/${movie.id}`}>
             <div
               key={movie.id}
               data-testid="movie-card"

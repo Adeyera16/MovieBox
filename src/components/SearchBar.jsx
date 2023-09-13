@@ -43,12 +43,18 @@ const SearchBar = () => {
       <div>
         {results.map((movie) => (
           <div key={movie.id}>
-            <h2>{movie.title}</h2>
+            <img
+                data-testid="movie-poster"
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt={movie.title}
+                className="w-[250px]"
+              />
+            <h2 data-testid="movie-title">{movie.title}</h2>
+            <p data-testid="movie-release-date">{movie.release_date}</p>
           </div>
         ))}
       </div>
         </Link>
-        
     </div>
   )
 }
