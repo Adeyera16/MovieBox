@@ -9,13 +9,15 @@ const SearchBar = () => {
   const [results, setResults] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
+  const apiKey = import.meta.env.VITE_API_KEY;
+
   useEffect(() => {
     const fetchMovie = async () => {
       try {
         setIsLoading(true);
 
         const response = await axios.get(
-          `https://api.themoviedb.org/3/search/movie?api_key=b82735c257ba13fe2e97f629922f6a34&include_adult=false&language=en-US&page=1&query=${query}`
+          `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&include_adult=false&language=en-US&page=1&query=${query}`
         );
 
         setResults(response.data.results);

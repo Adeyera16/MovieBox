@@ -8,10 +8,13 @@ import { Link } from "react-router-dom";
 const MovieList = () => {
   const [movieList, setMovielist] = useState([]);
 
+  const apiKey = import.meta.env.VITE_API_KEY;
+  // console.log(process.env.REACT_APP_API_KEY);
+
   useEffect(() => {
     axios
       .get(
-        "https://api.themoviedb.org/3/movie/top_rated?api_key=b82735c257ba13fe2e97f629922f6a34&language=en-US&page=1"
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`
       )
       .then((response) => {
         console.log(response);

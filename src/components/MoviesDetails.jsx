@@ -8,10 +8,13 @@ const MoviesDetails = () => {
   const [movieDetail, setMovieDetail] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
+  const apiKey = import.meta.env.VITE_API_KEY;
+
+
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=b82735c257ba13fe2e97f629922f6a34&language=en-US`
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`
       )
       .then((response) => {
         setMovieDetail(response.data);
@@ -30,14 +33,14 @@ const MoviesDetails = () => {
     <div>
       {isLoading && <p>Loading...</p>}
       <img src={`https://image.tmdb.org/t/p/w500${movieDetail.poster_path}`} alt={movieDetail.title} className="w-full h-[449px] object-cover"/>
-      <div className="flex flex-col md:flex md:flex-row text-[#6B7280] justify-between p-3">
-        <h1 className="font-bold text-black" data-testid="movie-title">{movieDetail.title}</h1>
+      <div className="flex flex-col md:flex text-[#6B7280] justify-between p-3">
+        <h1 className="font-bold text-2xl text-[#be123c]" data-testid="movie-title">{movieDetail.title}</h1>
         <p data-testid="movie-release-date">Release Date in UTC: {utcReleaseDate}</p>
         <p data-testid="movie-runtime">Runtime: {movieDetail.runtime} minutes</p>
       </div>
       <div className="flex">
         <div>
-          <h2 className="font-bold font-xl px-3">Overview.</h2>
+          <h2 className="font-bold text-2xl text-[#be123c] px-3">Overview.</h2>
           <p className="px-3 py-2 mb-[5rem] max-w-[50rem]" data-testid="movie-overview"> {movieDetail.overview}</p>
         </div>
         <div className=" flex-col mt-[2rem] ">
