@@ -8,13 +8,13 @@ const MoviesDetails = () => {
   const [movieDetail, setMovieDetail] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const apiKey = import.meta.env.VITE_API_KEY;
+  // const apiKey = import.meta.env.VITE_API_KEY;
 
 
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`
+        `https://api.themoviedb.org/3/movie/b82735c257ba13fe2e97f629922f6a34?api_key=${apiKey}&language=en-US`
       )
       .then((response) => {
         setMovieDetail(response.data);

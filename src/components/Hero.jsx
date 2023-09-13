@@ -9,10 +9,10 @@ const Hero = () => {
 
   const randomMovieRef = useRef(null);
 
-  const apiKey = import.meta.env.VITE_API_KEY;
+  // const apiKey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
-    axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
+    axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=b82735c257ba13fe2e97f629922f6a34&language=en-US&page=1`)
     .then((response) => {
       setMovies(response.data.results)
       randomMovieRef.current = movies[Math.floor(Math.random() * movies.length)];
