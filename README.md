@@ -1,8 +1,3 @@
-# React + Vite
+This is a movie discovery app, the app gets an api from the tdmb api and renders list of movies to the website.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+There are differents components on the website and two pages, a user can search for a movie on the searchbar by entering the title, a user can also click on one of the Featured movie card, to see more info about the Movie.
