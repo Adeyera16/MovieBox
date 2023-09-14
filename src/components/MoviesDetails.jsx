@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import {AiFillPlayCircle} from 'react-icons/ai';
+import {FaPlay} from 'react-icons/fa';
 
 const MoviesDetails = () => {
   const { id } = useParams();
@@ -31,13 +31,15 @@ const MoviesDetails = () => {
     <div>
       <div
       style={{
-        background: `url(https://image.tmdb.org/t/p/original/${movieDetail.backdrop_path})`,
+        background: `url(https://image.tmdb.org/t/p/original/${movieDetail.poster_path})`,
         width: '100%',
         height: '449px',
         backgroundSize: 'cover',
       }}>
         <div className="text-white flex flex-col justify-center items-center pt-[10rem] ">
-          <AiFillPlayCircle className="w-[50px" />
+          <div className="bg-[#e8e8e8] bg-opacity-20 w-[50px] rounded-full p-5  h-[50px]">
+            <FaPlay className="" />
+          </div>
           <p className=" text-xl">Watch Trailler</p>
         </div>
       </div>
